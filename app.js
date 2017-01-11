@@ -12,7 +12,7 @@
         const response = new Response(success);
         $scope.responses.push(response);
       }, (error) => {
-        debugger
+        // debugger
         //do something else
       });
     };
