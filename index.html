@@ -1,58 +1,23 @@
-<!--What is wrong with the HTML below?-->
-
-<!-- <!DOCTYPE html>
-<html ng-app="fetchApp">
-	<head>
-		<title>FETCH</title>
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-		<script type="text/javascript" src="app.js"></script>
-	</head>
-	<body ng-controller="MainController">
-	<div class="row">
-		<div class="sixteen columns">
-		<div class="six columns offfset-by-three">
-		<input type="text" ng-model="url">
-		<button ng-click="fetch()">click me</button>
-		<ul>
-			<select name="select">
-				<option value="GET">GET</option>
-				<option value="POST">POST</option>
-				<option value="OPTIONS">OPTIONS</option>
-				<option value="HEAD">HEAD</option>
-			</select>
-			<li ng-repeat="response in responses">{{response.statusCode}}</li>
-			</ul>
-			</div>
-			</div>
-		</div>
-	</body>
-</html> -->
-
-<!-- Working HTML -->
-
-
 <!DOCTYPE html>
 <html lang="en" ng-app="fetchApp">
 <head>
-    <meta charset="UTF-8">
     <title>FETCH!</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script type="text/javascript" src="/app.js"></script>
     <script type="text/javascript" src="controller.js"></script>
     <script type="text/javascript" src="RequestFactory.js"></script>
-      <script type="text/javascript" src="RequestService.js"></script>
-
+    <script type="text/javascript" src="RequestService.js"></script>
 </head>
+
 <body ng-controller="MainController">
 
 <div class="row">
     <div class="sixteen columns">
-        <div class="six columns offset-by-three">
+        <div class="four columns offset-by-four">
             <input type="text" ng-model="url">
             <button ng-click="fetch()">FETCH!</button>
-            <select name="select">
+            <select name="select" ng-model="method">
                 <option value="GET">GET</option> 
                 <option value="POST" selected>POST</option>
                 <option value="OPTIONS">OPTIONS</option>
@@ -62,14 +27,16 @@
                 <li ng-repeat="response in responses">
                     {{response.statusCode}}
                 </li>
-                 <li ng-repeat="response in responses">
+                <li ng-repeat="response in responses">
                     {{response.methodName}}
                 </li>
-                  <li ng-repeat="response in responses">
+                <li ng-repeat="response in responses">
                     {{response.urlName}}
                 </li>
+                <li ng-repeat="response in responses">
+                    {{response.responseTime}}
+                </li>
             </ul>
-
         </div>
     </div>
 </div>
