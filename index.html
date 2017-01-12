@@ -25,16 +25,19 @@
             </select>
             <ul>
                 <li ng-repeat="response in responses">
-                    {{response.statusCode}}
+                    {{"The HTTP status code is "}} {{response.statusCode}} {{"."}}
                 </li>
                 <li ng-repeat="response in responses">
-                    {{response.methodName}}
+                    {{"The HTTP method that is being used is "}}{{response.methodName}}{{"."}}
                 </li>
                 <li ng-repeat="response in responses">
-                    {{response.urlName}}
+                    {{"The requested URL is "}} {{response.urlName}}{{"."}}
                 </li>
                 <li ng-repeat="response in responses">
-                    {{response.responseTime}}
+                    {{"The response time is "}} {{response.responseTime}}{{"ms"}}{{"."}}
+                </li>
+                <li ng-repeat="response in responses">
+                    {{"The  content size of the response is ?????"}} {{""}}
                 </li>
             </ul>
         </div>
@@ -42,3 +45,4 @@
 </div>
 </body>
 </html>
+
