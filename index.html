@@ -13,36 +13,37 @@
 <body ng-controller="MainController">
 
 <div class="row">
-    <div class="sixteen columns">
-        <div class="four columns offset-by-four">
-            <input type="text" ng-model="url">
-            <button ng-click="fetch()">FETCH!</button>
-            <select name="select" ng-model="method">
-                <option value="GET">GET</option> 
-                <option value="POST">POST</option>
-                <option value="OPTIONS">OPTIONS</option>
-                <option value="HEAD">HEAD</option>
-            </select>
-            <ul>
-                <li ng-repeat="response in responses">
-                    {{"The HTTP status code is "}} {{response.statusCode}} {{"."}}
-                </li>
-                <li ng-repeat="response in responses">
-                    {{"The HTTP method that is being used is "}}{{response.methodName}}{{"."}}
-                </li>
-                <li ng-repeat="response in responses">
-                    {{"The requested URL is "}} {{response.urlName}}{{"."}}
-                </li>
-                <li ng-repeat="response in responses">
-                    {{"The response time is "}} {{response.responseTime}}{{"ms"}}{{"."}}
-                </li>
-                <li ng-repeat="response in responses">
-                    {{"The  content size of the response is ?????"}} {{""}}
-                </li>
-            </ul>
+  <div class="sixteen columns">
+        <div class="six columns offset-by-three">
+						<div class="row">
+             		<input type="text" ng-model="url">
+			          <select ng-model="method" ng-model="method">
+			          		<option value="GET">GET</option> 
+		                <option value="POST">POST</option>
+		                <option value="OPTIONS">OPTIONS</option>
+		                <option value="HEAD">HEAD</option>
+		            </select>
+              		<button ng-click="fetch()">FETCH!</button>
+              		</div>
+               		<table>
+              				<tr>
+              					<th>Status Code</th>
+              					<th>URL</th>
+              					<th>HTTP Method</th>
+              					<th>Response Time</th>
+              					<th>Content Size</th>
+              				</tr>
+              				<tr ng-repeat="response in responses">
+              					<td>{{response.statusCode}}</td>
+              					<td>{{response.urlName}}</td>
+              					<td>{{response.methodName}}</td>
+              					<td>{{response.responseTime}}</td>
+              					<td>{{""}}</td>
+              				</tr>
+              		</table>
+            </div>
         </div>
     </div>
-</div>
 </body>
 </html>
 
